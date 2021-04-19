@@ -6,3 +6,15 @@ with urlopen('https://en.wikipedia.org/wiki/Main_Page') as response:
     soup = BeautifulSoup(response,'html.parser')
     for anchor in soup.find_all('a'):
         print(anchor.get('href','/'))
+
+
+#with minimal changes
+
+
+from bs4 import BeautifulSoup
+from urllib.request import urlopen
+
+response= urlopen('https://en.wikipedia.org/wiki/Main_Page') #initialising response with url 
+soup = BeautifulSoup(response,'html.parser')
+for anchor in soup.find_all('a'):
+     print(anchor.get('href','/'))
